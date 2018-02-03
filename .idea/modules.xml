@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/YCD_OA.iml" filepath="$PROJECT_DIR$/YCD_OA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_firstpage/module_firstpage.iml" filepath="$PROJECT_DIR$/module_firstpage/module_firstpage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_library/module_library.iml" filepath="$PROJECT_DIR$/module_library/module_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_login/module_login.iml" filepath="$PROJECT_DIR$/module_login/module_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_person/module_person.iml" filepath="$PROJECT_DIR$/module_person/module_person.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_service/module_service.iml" filepath="$PROJECT_DIR$/module_service/module_service.iml" />
+    </modules>
+  </component>
+</project>

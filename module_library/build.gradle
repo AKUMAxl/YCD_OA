@@ -1,0 +1,106 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+    buildToolsVersion '26.0.2'
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.1'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    api "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    api "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    api "com.android.support:design:$rootProject.supportLibraryVersion"
+
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    testImplementation 'junit:junit:4.12'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //内存检测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    //router
+    api "com.alibaba:arouter-api:$rootProject.routerVersion"
+
+    //annotationProcessor "com.alibaba:arouter-compiler:$rootProject.annotationProcessor"
+
+    //logger
+    implementation "com.orhanobut:logger:$rootProject.loggerVersion"
+
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxjavaVersion"
+
+    //dagger2
+    annotationProcessor "com.google.dagger:dagger-compiler:2.4"
+    implementation 'com.google.dagger:dagger:2.4'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+
+    //zxing
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    //TakePhoto
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+
+    //Permission control
+    implementation 'com.yanzhenjie:permission:1.0.5'
+
+    //选择器
+    implementation('cn.qqtheme.framework:WheelPicker:1.5.5') {
+        exclude group: 'com.android.support'
+    }
+    implementation('cn.qqtheme.framework:FilePicker:1.5.5') {
+        exclude group: 'com.android.support'
+    }
+    implementation('cn.qqtheme.framework:ColorPicker:1.5.5') {
+        exclude group: 'com.android.support'
+    }
+
+    //刷新加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
+
+    //图表
+    //implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+
+    compile 'com.google.android.gms:play-services-ads:11.8.0'
+}

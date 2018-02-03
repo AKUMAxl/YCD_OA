@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Module_Library</string>
+    <string name="wangluocuowu">网络错误</string>
+    <string name="jiazaihong">加载中...</string>
+</resources>
