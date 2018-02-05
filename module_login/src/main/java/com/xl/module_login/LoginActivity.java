@@ -13,7 +13,10 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.xl.module_library.Base.BaseActivity;
 
+import com.xl.module_library.Base.BaseApplication;
+import com.xl.module_library.Util.AllData;
 import com.xl.module_library.Util.ChangeActivityUtil;
+import com.xl.module_library.Util.LocationUtils;
 import com.xl.module_library.Widget.MyProgressDialog;
 
 import java.util.List;
@@ -44,7 +47,20 @@ public class LoginActivity extends BaseActivity implements LoginView{
             @Override
             public void onClick(View v) {
                 Log.i("xl","点击登录");
-                loginPersenter.getUserInfo("","");
+                LocationUtils.getIntance(oThis.getApplicationContext()).locationStop();
+
+                //loginPersenter.getUserInfo("","");
+                //ChangeActivityUtil.getIntance().ToNextActivity(oThis,"/module_main/main_activity",null,false);
+
+            }
+        });
+
+        is_tv = findViewById(R.id.is_tv);
+        is_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("xl","点击is"+ AllData.a);
+                LocationUtils.getIntance(oThis.getApplicationContext()).locationStart();
 
             }
         });
@@ -77,6 +93,8 @@ public class LoginActivity extends BaseActivity implements LoginView{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        loginPersenter.getDelete();
+        if (loginPersenter!=null){
+            loginPersenter.getDelete();
+        }
     }
 }

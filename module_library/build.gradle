@@ -22,6 +22,8 @@ android {
 
 dependencies {
     implementation 'com.android.support:multidex:1.0.1'
+    //百度地图
+    implementation files('libs/BaiduLBS_Android.jar')
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
@@ -100,7 +102,6 @@ dependencies {
 
     //图表
     //implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
-
 
     compile 'com.google.android.gms:play-services-ads:11.8.0'
 }

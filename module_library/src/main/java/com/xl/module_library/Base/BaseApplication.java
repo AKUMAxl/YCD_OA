@@ -4,6 +4,8 @@ import android.app.Application;
 
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
@@ -20,13 +22,15 @@ import java.util.List;
  */
 public class    BaseApplication extends Application {
 
-    public static final String ROOT_PACKAGE = "com.xl";
+    public static final String ROOT_PACKAGE = "com.yangchedou";
 
     private static BaseApplication sInstance;
 
     private List<ApplicationDelegate> mAppDelegateList;
 
     public static RefWatcher refWatcher;
+
+
 
 
     public static BaseApplication getIns() {
@@ -61,10 +65,12 @@ public class    BaseApplication extends Application {
                 .methodCount(0)         // (Optional) How many method line to show. Default 2
                 .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
                 //.logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
-                .tag("xl")   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+                .tag("oa")   // (Optional) Global tag for every log. Default PRETTY_LOGGER
                 .build();
 
         Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+
+
 
     }
 
@@ -92,4 +98,7 @@ public class    BaseApplication extends Application {
             delegate.onTrimMemory(level);
         }
     }
+
+
+
 }
